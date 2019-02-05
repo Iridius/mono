@@ -1,8 +1,9 @@
-package ru.mono;
+package ru.mono.controller;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import ru.mono.R;
 import ru.mono.controller.IGame;
 import ru.mono.model.GameFactory;
 
