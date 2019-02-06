@@ -5,9 +5,11 @@ import ru.mono.controller.IGame;
 
 public class Game implements IGame {
     private int mPlayers;
+    private IBoard mBoard;
 
     public Game(int players) {
         mPlayers = players;
+        mBoard = BoardFactory.create();
     }
 
     @Override
