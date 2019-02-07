@@ -1,14 +1,18 @@
 package ru.mono.model;
 
 import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
 import ru.mono.controller.IGame;
 
 public class Game implements IGame {
-    private int mPlayers;
+    private Collection<IPlayer> mPlayers;
     private IBoard mBoard;
 
-    public Game(int players) {
-        mPlayers = players;
+    Game(int players) {
+        mPlayers = PlayerFactory.create(players);
         mBoard = BoardFactory.create();
     }
 
@@ -18,7 +22,17 @@ public class Game implements IGame {
     }
 
     @Override
-    public int getPlayers() {
+    public Collection<IPlayer> getPlayers() {
         return mPlayers;
+    }
+
+    @Override
+    public IPlayer getPlayers(int i) {
+        return (IPlayer) ((ArrayList)mPlayers).get(i);
+    }
+
+    @Override
+    public IBoard getBoard() {
+        return mBoard;
     }
 }

@@ -2,6 +2,6 @@ package ru.mono.model;
 
 import java.util.Collection;
 
-interface IBoard {
+public interface IBoard {
     Collection<ICell> getCells();
 }
