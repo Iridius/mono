@@ -60,4 +60,13 @@ public class Tests {
 
         assertEquals("Ожидалось, что при совершении хода текущая позиция игрока изменится на указанное количество клеток.", DELTA, mPlayer1.getCurrentCell().getNumber());
     }
+
+    @Test
+    public void after_end_cell_must_be_first_cell(){
+        final int DELTA = 42;
+        mBoard.move(mPlayer1, DELTA);
+
+        assertEquals("Ожидалось, что после последней ячейки будет первая (начало и конец игровой доски замкнуты).", 2, mPlayer1.getCurrentCell().getNumber());
+    }
 }
+
