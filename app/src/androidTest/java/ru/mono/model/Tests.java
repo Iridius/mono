@@ -44,6 +44,12 @@ public class Tests {
 
     @Test
     public void board_have_initial_cell(){
+        for(ICell cell: mBoard.getCells()){
+            if(cell.getNumber() == 0){
+                return;
+            }
+        }
+
         fail("Ожидалось, что игровое поле будет иметь начальную ячейку.");
     }
 }

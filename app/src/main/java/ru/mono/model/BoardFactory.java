@@ -10,14 +10,33 @@ class BoardFactory {
 
     private static class Board implements IBoard {
         private Collection<ICell> mCells;
+        private static int CELL_COUNT = 40;
 
         Board(){
             mCells = new ArrayList<>();
+
+            for(int i = 0; i < CELL_COUNT; i++){
+                ICell cell = new Cell(i);
+                mCells.add(cell);
+            }
         }
 
         @Override
         public Collection<ICell> getCells() {
             return mCells;
+        }
+
+        private class Cell implements ICell {
+            private int mNumber;
+
+            Cell(int number) {
+                mNumber = number;
+            }
+
+            @Override
+            public int getNumber() {
+                return mNumber;
+            }
         }
     }
 }
