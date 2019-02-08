@@ -1,5 +1,6 @@
 package ru.mono.model;
 
 public interface IPlayer {
-    int getPosition();
+    ICell getCurrentCell();
+    void setCurrentCell(ICell cell);
 }

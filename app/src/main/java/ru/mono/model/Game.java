@@ -12,8 +12,8 @@ public class Game implements IGame {
     private IBoard mBoard;
 
     Game(int players) {
-        mPlayers = PlayerFactory.create(players);
         mBoard = BoardFactory.create();
+        mPlayers = PlayerFactory.create(players, mBoard);
     }
 
     @Override

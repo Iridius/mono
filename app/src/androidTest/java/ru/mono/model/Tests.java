@@ -30,8 +30,8 @@ public class Tests {
 
     @Test
     public void at_the_start_game_all_players_has_zero_position(){
-        int position1 = mPlayer1.getPosition();
-        int position2 = mPlayer2.getPosition();
+        int position1 = mPlayer1.getCurrentCell().getNumber();
+        int position2 = mPlayer2.getCurrentCell().getNumber();
 
         assertEquals("Ожидалось, что первый игрок начнёт игру в нулеой позиции.", 0, position1);
         assertEquals("Ожидалось, что второй игрок начнёт игру в нулеой позиции.", 0, position2);
@@ -51,5 +51,13 @@ public class Tests {
         }
 
         fail("Ожидалось, что игровое поле будет иметь начальную ячейку.");
+    }
+
+    @Test
+    public void player_position_is_a_cell_number(){
+        final int DELTA = 5;
+        mBoard.move(mPlayer1, DELTA);
+
+        assertEquals("Ожидалось, что при совершении хода текущая позиция игрока изменится на указанное количество клеток.", DELTA, mPlayer1.getCurrentCell().getNumber());
     }
 }

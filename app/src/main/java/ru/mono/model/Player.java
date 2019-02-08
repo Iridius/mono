@@ -1,16 +1,18 @@
 package ru.mono.model;
 
 class Player implements IPlayer {
-    private int mPosition;
-    private String mName;
-
-    Player(String name) {
-        mName = name;
-        mPosition = 0;
+    private ICell mCurrentCell;
+    Player(ICell cell) {
+        setCurrentCell(cell);
     }
 
     @Override
-    public int getPosition() {
-        return mPosition;
+    public ICell getCurrentCell() {
+        return mCurrentCell;
+    }
+
+    @Override
+    public void setCurrentCell(ICell cell) {
+        mCurrentCell = cell;
     }
 }

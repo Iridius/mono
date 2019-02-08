@@ -26,6 +26,24 @@ class BoardFactory {
             return mCells;
         }
 
+        @Override
+        public ICell getCell(int i) {
+            for(ICell cell: mCells){
+                if(cell.getNumber() == i){
+                    return cell;
+                }
+            }
+
+            return null;
+        }
+
+        @Override
+        public void move(IPlayer player, int delta) {
+            ICell cell = getCell(player.getCurrentCell().getNumber() + delta);
+
+            player.setCurrentCell(cell);
+        }
+
         private class Cell implements ICell {
             private int mNumber;
 
