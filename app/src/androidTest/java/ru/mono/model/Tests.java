@@ -33,8 +33,8 @@ public class Tests {
         int position1 = mPlayer1.getCurrentCell().getNumber();
         int position2 = mPlayer2.getCurrentCell().getNumber();
 
-        assertEquals("Ожидалось, что первый игрок начнёт игру в нулеой позиции.", 0, position1);
-        assertEquals("Ожидалось, что второй игрок начнёт игру в нулеой позиции.", 0, position2);
+        assertEquals("Ожидалось, что первый игрок начнёт игру в нулевой позиции.", 0, position1);
+        assertEquals("Ожидалось, что второй игрок начнёт игру в нулевой позиции.", 0, position2);
     }
 
     @Test
