@@ -39,13 +39,7 @@ class BoardFactory {
 
         @Override
         public void move(IPlayer player, int delta) {
-            int destination_cell = player.getCurrentCell().getNumber() + delta;
-            if(destination_cell >= mCells.size()){
-                destination_cell = destination_cell - mCells.size();
-            }
 
-            ICell cell = getCell(destination_cell);
-            player.setCurrentCell(cell);
         }
 
         private class Cell implements ICell {

@@ -1,18 +1,26 @@
 package ru.mono.model;
 
+import java.util.Collection;
+
 class Player implements IPlayer {
-    private ICell mCurrentCell;
-    Player(ICell cell) {
-        setCurrentCell(cell);
+    private String mName;
+
+    Player(String name) {
+        mName = name;
     }
 
     @Override
-    public ICell getCurrentCell() {
-        return mCurrentCell;
+    public int makeTurn() {
+        return 0;
     }
 
     @Override
-    public void setCurrentCell(ICell cell) {
-        mCurrentCell = cell;
+    public IAction makeChoice(Collection<IAction> actions) {
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return mName;
     }
 }

@@ -8,8 +8,9 @@ import ru.mono.model.IPlayer;
 public interface IGame {
     void start();
 
+    void addPlayer(IPlayer player);
     Collection<IPlayer> getPlayers();
-    IPlayer getPlayers(int i);
+    IPlayer getPlayer(int i);
 
     IBoard getBoard();
 }

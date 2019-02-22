@@ -16,11 +16,16 @@ public class Tests {
     @Before
     public void init(){
         mGame = GameFactory.create();
+
+        mPlayer1 = new Player("name1");
+        mGame.addPlayer(mPlayer1);
+
+        mPlayer2 = new Player("name2");
+        mGame.addPlayer(mPlayer2);
+
         mGame.start();
 
         mBoard = mGame.getBoard();
-        mPlayer1 = mGame.getPlayers(0);
-        mPlayer2 = mGame.getPlayers(1);
     }
 
     @Test
@@ -30,11 +35,9 @@ public class Tests {
 
     @Test
     public void at_the_start_game_all_players_has_zero_position(){
-        int position1 = mPlayer1.getCurrentCell().getNumber();
-        int position2 = mPlayer2.getCurrentCell().getNumber();
-
-        assertEquals("Ожидалось, что первый игрок начнёт игру в нулевой позиции.", 0, position1);
-        assertEquals("Ожидалось, что второй игрок начнёт игру в нулевой позиции.", 0, position2);
+        fail("Ожидалось, что в начале игры игроки начнут игру в нулевой позиции.");
+        //assertEquals("Ожидалось, что первый игрок начнёт игру в нулевой позиции.", 0, position1);
+        //assertEquals("Ожидалось, что второй игрок начнёт игру в нулевой позиции.", 0, position2);
     }
 
     @Test
@@ -54,19 +57,12 @@ public class Tests {
     }
 
     @Test
-    public void player_position_is_a_cell_number(){
-        final int DELTA = 5;
-        mBoard.move(mPlayer1, DELTA);
-
-        assertEquals("Ожидалось, что при совершении хода текущая позиция игрока изменится на указанное количество клеток.", DELTA, mPlayer1.getCurrentCell().getNumber());
-    }
-
-    @Test
     public void after_end_cell_must_be_first_cell(){
         final int DELTA = 42;
         mBoard.move(mPlayer1, DELTA);
 
-        assertEquals("Ожидалось, что после последней ячейки будет первая (начало и конец игровой доски замкнуты).", 2, mPlayer1.getCurrentCell().getNumber());
+        //assertEquals("Ожидалось, что после последней ячейки будет первая (начало и конец игровой доски замкнуты).", 2, mPlayer1.getCurrentCell().getNumber());
+        fail("Ожидалось, что после последней ячейки будет первая (начало и конец игровой доски замкнуты).");
     }
 }
 

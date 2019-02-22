@@ -1,6 +1,8 @@
 package ru.mono.model;
 
+import java.util.Collection;
+
 public interface IPlayer {
-    ICell getCurrentCell();
-    void setCurrentCell(ICell cell);
+    int makeTurn();
+    IAction makeChoice(Collection<IAction> actions);
 }
