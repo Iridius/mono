@@ -4,8 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import ru.mono.R;
-import ru.mono.controller.IGame;
-import ru.mono.model.GameFactory;
+import ru.mono.model.Game;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        IGame game = GameFactory.create();
+        IGame game = new Game();
         game.start();
     }
 }

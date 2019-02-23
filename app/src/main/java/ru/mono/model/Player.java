@@ -1,8 +1,10 @@
 package ru.mono.model;
 
 import java.util.Collection;
+import java.util.concurrent.ThreadLocalRandom;
 
 class Player implements IPlayer {
+
     private String mName;
 
     Player(String name) {
@@ -11,7 +13,10 @@ class Player implements IPlayer {
 
     @Override
     public int makeTurn() {
-        return 0;
+        int MIN = 1;
+        int MAX = 6;
+
+        return ThreadLocalRandom.current().nextInt(MIN, MAX + 1) + ThreadLocalRandom.current().nextInt(MIN, MAX + 1);
     }
 
     @Override

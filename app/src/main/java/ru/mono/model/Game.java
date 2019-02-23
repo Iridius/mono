@@ -11,7 +11,7 @@ public class Game implements IGame {
     private Collection<IPlayer> mPlayers;
     private IBoard mBoard;
 
-    Game() {
+    public Game() {
         mBoard = BoardFactory.create();
         mPlayers = new ArrayList<>();
     }
@@ -29,11 +29,6 @@ public class Game implements IGame {
     @Override
     public Collection<IPlayer> getPlayers() {
         return mPlayers;
-    }
-
-    @Override
-    public IPlayer getPlayer(int i) {
-        return (IPlayer) ((ArrayList)mPlayers).get(i);
     }
 
     @Override

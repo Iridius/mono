@@ -10,7 +10,6 @@ public interface IGame {
 
     void addPlayer(IPlayer player);
     Collection<IPlayer> getPlayers();
-    IPlayer getPlayer(int i);
 
     IBoard getBoard();
 }
